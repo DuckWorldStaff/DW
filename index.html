@@ -132,58 +132,35 @@
     </div>
     </div>
     <script>
-        // --- НАСТРОЙКА ---
-        const correctPassword = "kudrin1404"; // !!! ЗАМЕНИТЕ ЭТО НА СВОЙ ПАРОЛЬ !!!
-        // --- КОНЕЦ НАСТРОЙКИ ---
+        const correctPassword = atob("a3VkcmluMTQwNA=="); const passwordOverlay = document.getElementById('passwordOverlay');const passwordInput = document.getElementById('passwordInput');const submitButton = document.getElementById('submitPassword');const protectedContent = document.getElementById('protectedContent');const errorMessage = document.getElementById('errorMessage');
 
-        // Получаем ссылки на элементы DOM
-        const passwordOverlay = document.getElementById('passwordOverlay');
-        const passwordInput = document.getElementById('passwordInput');
-        const submitButton = document.getElementById('submitPassword');
-        const protectedContent = document.getElementById('protectedContent');
-        const errorMessage = document.getElementById('errorMessage');
-
-        // Функция проверки пароля
         function checkPassword() {
             const enteredPassword = passwordInput.value;
-
             if (enteredPassword === correctPassword) {
-                // Пароль верный: скрываем оверлей, показываем контент
-                passwordOverlay.classList.add('hidden'); // Добавляем класс для плавного исчезновения
+                passwordOverlay.classList.add('hidden');
                 protectedContent.style.display = 'block';
-                errorMessage.style.display = 'none'; // Убираем сообщение об ошибке, если оно было
-                // Очищаем поле на всякий случай (хотя оно уже скрыто)
+                errorMessage.style.display = 'none';
                 passwordInput.value = '';
 
             } else {
-                // Пароль неверный: показываем сообщение об ошибке
                 errorMessage.textContent = 'Неверный пароль. Попробуйте еще раз.';
                 errorMessage.style.display = 'block';
-                passwordInput.focus(); // Устанавливаем фокус обратно в поле ввода
-                passwordInput.select(); // Выделяем текст для удобства перезаписи
-                // Добавим легкую анимацию тряски для наглядности (опционально)
+                passwordInput.focus(); 
+                passwordInput.select(); 
                 const promptBox = document.getElementById('passwordPrompt');
                 promptBox.style.animation = 'shake 0.5s';
-                setTimeout(() => { promptBox.style.animation = '' }, 500); // Убираем анимацию после завершения
+                setTimeout(() => { promptBox.style.animation = '' }, 500);
             }
         }
-
-        // Добавляем обработчик на клик по кнопке
         submitButton.addEventListener('click', checkPassword);
 
-        // Добавляем обработчик на нажатие Enter в поле ввода
         passwordInput.addEventListener('keypress', function (event) {
-            // Проверяем, была ли нажата клавиша Enter (код 13)
             if (event.key === "Enter" || event.keyCode === 13) {
-                event.preventDefault(); // Предотвращаем стандартное поведение (если поле в форме)
-                checkPassword(); // Вызываем нашу функцию проверки
+                event.preventDefault();
+                checkPassword(); 
             }
         });
-
-        // Устанавливаем фокус в поле ввода при загрузке
         passwordInput.focus();
-
-        // Опционально: CSS для анимации тряски при ошибке
         const styleSheet = document.createElement("style");
         styleSheet.type = "text/css";
         styleSheet.innerText = `
