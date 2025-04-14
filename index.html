@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="Raquel" content="Codify Academy">
+    <met name="description" content="An intermediate simple site replication made by Codify Academy.">
+        <title>DuckWorld-Staff</title>
+        <link rel="shortcut" href="favicon.ico">
+        <link href="http://fonts.goolgleapis.com/css?family=Open+Sans:400,300,700" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div id="passwordOverlay">
+        <div id="passwordPrompt">
+            <h2>Требуется доступ</h2>
+            <p>Пожалуйста, введите пароль для просмотра содержимого.</p>
+            <input type="password" id="passwordInput" placeholder="Пароль">
+            <div id="errorMessage"></div> <!-- Место для сообщения об ошибке -->
+            <button id="submitPassword">Войти</button>
+        </div>
+    </div>
+    <div id="protectedContent">
+        <nav>
+            <div class="logo">
+                <span class="duck-logo">Duck</span>World-Staff
+            </div>
+            <ul>
+                <li class="nav-link active">
+                    <a
+                        href="https://sites.google.com/view/duckworld-moderators/%D0%B3%D0%BB%D0%B0%D0%B2%D0%BD%D0%B0%D1%8F-%D1%81%D1%82%D1%80%D0%B0%D0%BD%D0%B8%D1%86%D0%B0?authuser=0">Справочник</a>
+                </li>
+                <li class="nav-link">
+                    <a href="https://drive.google.com/file/d/18ECSZvlQudHRG6nyhBLbqb5kcnPhb0lm/view">Регламент</a>
+                </li>
+                <li class="nav-link">
+                    <a href="https://vk.com/topic-221816899_51909450">Правила проекта</a>
+                </li>
+                <li class="nav-link">
+                    <a href="main.html">Новости персонала</a>
+                </li>
+                <li class="dropdown">
+                    <a href="#" class="dropbtn">КОНТАКТЫ DS</a>
+                    <ul class="dropdown-content">
+                        <li><a href="https://discord.com/users/659389177367887876" target="_blank">SNICH_GAMES</a></li>
+                        <li><a href="https://discord.com/users/828582521494831104" target="_blank">Midweek24</a></li>
+                        <li><a href="https://discord.com/users/828582521494831104" target="_blank">FINDMY</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="#" class="dropbtn">КОНТАКТЫ TG</a>
+                    <ul class="dropdown-content">
+                        <li><a href="http://t.me/snich_1" target="_blank">SNICH_GAMES</a></li>
+                        <li><a href="http://t.me/midweek24" target="_blank">Midweek24</a></li>
+                        <li><a href="http://t.me/borodinskiy_hleb" target="_blank">FINDMY</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+
+        <header>
+            <img class="banner" src="img/iL3OtYTrg24.png" alt="Фото надписи">
+            <h1><span class="duck">Duck</span>World<span>-STAFF</span></h1>
+            <h2>Это <span>краткое </span>руководство для стажеров</h2>
+            <h2>Мы просим вас полностью ознакомится с регламентом</h2>
+            <h2>Для полного ознакомления нажмите на кнопку ниже</h2>
+            <a href="https://drive.google.com/file/d/18ECSZvlQudHRG6nyhBLbqb5kcnPhb0lm/view">Регламент</a>
+        </header>
+        <section class="faq-section">
+            <h2>Частые вопросы стажеров</h2>
+            <dl class="faq-list">
+                <dt>Вопрос 1: Сколько времени мне нужно уделять работе?</dt>
+                <dd>В учебное время: 50 часов в патруле в месяц, в не учебное время: 80</dd>
+
+                <dt>Вопрос 2: Где найти правила проекта?</dt>
+                <dd>Правила можно найти в вк группе сервера, либо по кнопке ниже</dd>
+                <a class="rules" href="https://vk.com/topic-221816899_51909450">Правила проекта</a>
+
+                <dt>Вопрос 3: К кому обращаться если есть вопросы?</dt>
+                <dd>Если у вас имеются вопросы, то вы можете обращаться к вашему наставнику. Узнать кто ваш наставник
+                    можно
+                    по кнопке ниже</dd>
+                <a class="personal"
+                    href="https://sites.google.com/view/duckworld-moderators/%D1%82%D0%B0%D0%B1%D0%BB%D0%B8%D1%86%D0%B0-%D0%BF%D0%B5%D1%80%D1%81%D0%BE%D0%BD%D0%B0%D0%BB%D0%B0-all?authuser=0">Таблица
+                    персонала</a>
+
+                <dt>Вопрос 4: Как правильно мутить нарушителей?</dt>
+                <dd>Что бы замутить нарушителя, используй команду <p class="decor">/tempmute</p> Ниже пример как
+                    правильно
+                    выдавать муты</dd>
+                <dd>К примеру игрок нарушил правило 2.1 и спамил в чате, в таком случае пиши так:</dd>
+                <dd>/tempmute<ник>
+                        <время>
+                            <причина>
+                </dd>
+                <dd>Вот правильный пример мута:</dd>
+                <dd class="decor">/tempmute FINDMY 30m 2.1 Спам (Стадия 1 - 30м)</dd>
+                <dd>Более подробно вы можете ознакомится в регламенте</dd>
+                <a class="reg" href="https://vk.com/topic-221816899_51909450">Регламент</a>
+
+                <dt>Вопрос 5: Что если я не понимаю обьяснение какого либо правила?</dt>
+                <dd>Если вы не понимаете какое то правило, вы можете перейти по ссылке ниже и прочитать более поробное
+                    пояснение к какому либо правилу</dd>
+
+                <a class="p-rules"
+                    href="https://docs.google.com/spreadsheets/d/1CBkFAeBT5yokG4YTPyoyzWXfQECZ3QOJ_BFLIt4PjR8/edit?gid=870710119#gid=870710119">Пояснение
+                    к правилам</a>
+
+                <dt>Вопрос 6: Что такое стадии, и как их писать?</dt>
+                <dd>Стадия, это система тяжести наказания. Узнать что это такое более подробно можно посетив руководство
+                    системы
+                    стадий либо нажав на кнопку ниже</dd>
+                <a class="stadii"
+                    href="https://drive.google.com/file/d/1EFqnq4_lCbbVvc_EX0t5_Bc7YL9ylH0ZF1XtGYJZFpo/edit?pli=1&tab=t.0">Руководство
+                    системы стадий</a>
+            </dl>
+        </section>
+        <br class="br">
+        <footer>
+            <h3>IP - play.duckworld.su</h3>
+            <br>
+            <p class="bold">
+                Created by FINDMY
+                <a href></a>
+            </p>
+            <p>
+
+            </p>
+        </footer>
+    </div>
+    </div>
+    <script>
+        // --- НАСТРОЙКА ---
+        const correctPassword = "1212"; // !!! ЗАМЕНИТЕ ЭТО НА СВОЙ ПАРОЛЬ !!!
+        // --- КОНЕЦ НАСТРОЙКИ ---
+
+        // Получаем ссылки на элементы DOM
+        const passwordOverlay = document.getElementById('passwordOverlay');
+        const passwordInput = document.getElementById('passwordInput');
+        const submitButton = document.getElementById('submitPassword');
+        const protectedContent = document.getElementById('protectedContent');
+        const errorMessage = document.getElementById('errorMessage');
+
+        // Функция проверки пароля
+        function checkPassword() {
+            const enteredPassword = passwordInput.value;
+
+            if (enteredPassword === correctPassword) {
+                // Пароль верный: скрываем оверлей, показываем контент
+                passwordOverlay.classList.add('hidden'); // Добавляем класс для плавного исчезновения
+                protectedContent.style.display = 'block';
+                errorMessage.style.display = 'none'; // Убираем сообщение об ошибке, если оно было
+                // Очищаем поле на всякий случай (хотя оно уже скрыто)
+                passwordInput.value = '';
+
+            } else {
+                // Пароль неверный: показываем сообщение об ошибке
+                errorMessage.textContent = 'Неверный пароль. Попробуйте еще раз.';
+                errorMessage.style.display = 'block';
+                passwordInput.focus(); // Устанавливаем фокус обратно в поле ввода
+                passwordInput.select(); // Выделяем текст для удобства перезаписи
+                // Добавим легкую анимацию тряски для наглядности (опционально)
+                const promptBox = document.getElementById('passwordPrompt');
+                promptBox.style.animation = 'shake 0.5s';
+                setTimeout(() => { promptBox.style.animation = '' }, 500); // Убираем анимацию после завершения
+            }
+        }
+
+        // Добавляем обработчик на клик по кнопке
+        submitButton.addEventListener('click', checkPassword);
+
+        // Добавляем обработчик на нажатие Enter в поле ввода
+        passwordInput.addEventListener('keypress', function (event) {
+            // Проверяем, была ли нажата клавиша Enter (код 13)
+            if (event.key === "Enter" || event.keyCode === 13) {
+                event.preventDefault(); // Предотвращаем стандартное поведение (если поле в форме)
+                checkPassword(); // Вызываем нашу функцию проверки
+            }
+        });
+
+        // Устанавливаем фокус в поле ввода при загрузке
+        passwordInput.focus();
+
+        // Опционально: CSS для анимации тряски при ошибке
+        const styleSheet = document.createElement("style");
+        styleSheet.type = "text/css";
+        styleSheet.innerText = `
+            @keyframes shake {
+              0%, 100% { transform: translateX(0); }
+              10%, 30%, 50%, 70%, 90% { transform: translateX(-5px); }
+              20%, 40%, 60%, 80% { transform: translateX(5px); }
+            }
+         `;
+        document.head.appendChild(styleSheet);
+
+    </script>
+</body>
+
+</html>
