@@ -18,7 +18,7 @@
             <h2>Требуется доступ</h2>
             <p>Введите пароль, предоставленный вашим наставником.</p>
             <input type="password" id="passwordInput" placeholder="Пароль">
-            <div id="errorMessage">Если ваш пароль не работает, напишите об этом вашему наставнику</div>
+            <div id="errorMessage"></div>
             <button id="submitPassword">Войти</button>
         </div>
     </div>
@@ -143,7 +143,8 @@
                 passwordInput.value = '';
 
             } else {
-                errorMessage.textContent = 'Неверный пароль. Попробуйте еще раз.';
+                errorMessage.textContent = 'Пароль не верный!';
+                errorMessage.textContent = 'Если ваш пароль не работает, сообщите об этом вашему наставнику.';
                 errorMessage.style.display = 'block';
                 passwordInput.focus(); 
                 passwordInput.select(); 
