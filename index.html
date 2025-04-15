@@ -132,30 +132,23 @@
     </div>
     </div>
     <script>
-        const correctPassword = atob("a3VkcmluMTQwNA=="); const passwordOverlay = document.getElementById('passwordOverlay');const passwordInput = document.getElementById('passwordInput');const submitButton = document.getElementById('submitPassword');const protectedContent = document.getElementById('protectedContent');const errorMessage = document.getElementById('errorMessage');
+        const correctPassword = atob("a21tYTE1MDQ="); const passwordOverlay = document.getElementById('passwordOverlay');const passwordInput = document.getElementById('passwordInput');const submitButton = document.getElementById('submitPassword');const protectedContent = document.getElementById('protectedContent');const errorMessage = document.getElementById('errorMessage');
 
-        // Ключ для хранения флага доступа в localStorage
-const accessFlagKey = 'userAccessGranted_kudrin_page'; // Используй уникальный ключ
+const accessFlagKey = 'userAccessGranted_kudrin_page'; 
 
-// --- Проверка при загрузке страницы ---
 function checkAccessOnLoad() {
-    // Проверяем, был ли доступ предоставлен ранее в этом браузере
     const accessGranted = localStorage.getItem(accessFlagKey);
 
     if (accessGranted === 'true') {
-        // Доступ уже был, сразу показываем контент
         showContent();
     } else {
-        // Доступа не было, показываем оверлей с паролем
         showPasswordOverlay();
     }
 }
-
-// --- Функция для показа контента и скрытия оверлея ---
 function showContent() {
     if (passwordOverlay) passwordOverlay.style.display = 'none';
     if (protectedContent) protectedContent.style.display = 'block';
-    if (errorMessage) errorMessage.textContent = ''; // Очистить старые ошибки
+    if (errorMessage) errorMessage.textContent = '';
 }
 
         function checkPassword() {
@@ -196,8 +189,6 @@ function showContent() {
          `;
         document.head.appendChild(styleSheet);
 
-        // --- Запускаем проверку доступа при загрузке страницы ---
-checkAccessOnLoad();
 
     </script>
 </body>
