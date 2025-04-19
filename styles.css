@@ -1,70 +1,134 @@
-*{
-	margin: 0;
-	padding: 0;
+/* Добавить в самое начало файла */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  /* Важно для предсказуемой верстки */
 }
-body{
-	font-size: 14px;
-	background-color: #2a2a2a;
+
+html {
+  font-size: 100%;
+  /* Обычно 16px, база для rem */
+  scroll-behavior: smooth;
+  /* Оставляем твой скролл */
+  background-color: #2a2a2a;
+  /* Переносим фон с body сюда */
 }
+
+body {
+  font-size: 0.875rem;
+  /* ~14px */
+  /* background-color: #2a2a2a; */
+  /* Убираем отсюда, задано в html */
+  font-family: 'Open Sans', sans-serif;
+  /* Укажем основной шрифт здесь */
+  color: #d8d8d8;
+  /* Базовый цвет текста */
+  line-height: 1.6;
+  /* Базовый межстрочный интервал */
+}
+
+img {
+  /* Базовый стиль для всех изображений */
+  max-width: 100%;
+  /* Изображения не будут вылезать за контейнер */
+  height: auto;
+  /* Сохранение пропорций */
+  display: block;
+  /* Убирает лишний отступ под картинкой */
+}
+
+a {
+  /* Базовый стиль ссылок */
+  color: #ff6760;
+  /* Твой цвет ссылок */
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+  /* Простое подчеркивание при наведении */
+}
+
+/* Конец общих стилей */
+
+body {
+  font-size: 14px;
+  background-color: #2a2a2a;
+}
+
 /* navigation */
 
-nav{
-	background-color: #262626;
-	height: 80px
+/* --- ИЗМЕНЕНИЯ В НАВИГАЦИИ --- */
+nav {
+  background-color: #262626;
+  /* height: 80px; */
+  /* Убираем фиксированную высоту */
+  padding: 15px 20px;
+  /* Добавляем внутренние отступы */
+  display: flex;
+  /* Включаем Flexbox */
+  justify-content: space-between;
+  /* Лого слева, меню справа */
+  align-items: center;
+  /* Выравниваем по вертикали */
+  flex-wrap: wrap;
+  /* Разрешаем перенос на маленьких экранах (хотя лучше сделать гамбургер) */
 }
 
-nav .logo{
-	color: #fff;
-	line-height: 20px;
-	font-size: 38px;
-	float: left;
-	padding: 15px 15px;
-	padding-left: 35px;
-	margin-top: 15px;
-	font-weight: bold;
+nav .logo {
+  color: #fff;
+  /* line-height: 20px; */
+  /* Управляется align-items */
+  font-size: 2rem;
+  /* Используем rem */
+  /* Было 38px */
+  /* float: left; */
+  /* Убираем float */
+  /* padding: 15px 15px; */
+  /* Задано в nav */
+  /* padding-left: 35px; */
+  /* margin-top: 15px; */
+  /* Управляется align-items */
+  font-weight: bold;
+  flex-shrink: 0;
+  /* Чтобы лого не сжималось */
 }
-.duck {
-  color: rgb(251, 114, 1);
-  font-size: 54px;
-}
+
 .duck-logo {
-  color: rgb(251, 114, 1);
-  font-size: 44px;
+  color: rgb(255, 115, 0);
+  font-size: 2.3rem;
 }
 
-nav ul{
-	float: right;
-	padding: 15px 15px;
-	padding-right: 35px;
-	font-size: 17px;
-	margin-top: 20px;
-	font-weight: bold;
-	font-family: arial;
-}
+nav ul {
+  font-size: 1rem;
+  font-weight: bold;
+  font-family: arial, sans-serif;
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  }
 
-nav ul li{
-	display: inline-block;
-	list-style-type: circle;
-}
-
-nav ul li.acitve a{
-	color: #ff6760;
+nav ul li.acitve a {
+  color: #ff6760;
 }
 
 
-nav ul li a{
-	color: #d8d8d8;
-	text-decoration: none;
-	margin-right: 35px;
-	text-transform: uppercase;
+nav ul li a {
+  color: #ffffff;
+  text-decoration: none;
+  text-transform: uppercase;
+  padding: 5px 0;
+  display: block;
 }
 
-/* ... ваши стили для .nav-link ... */
-
-/* Линия подчеркивания при наведении (пример) */
 .nav-link:hover {
   color: #ff9800;
 }
+
 .nav-link:hover::after {
   content: '';
   position: absolute;
@@ -76,19 +140,19 @@ nav ul li a{
 }
 
 /* --- СТИЛИ ДЛЯ АКТИВНОЙ ССЫЛКИ (добавленной вручную) --- */
-.nav-link.active { /* Стиль для ссылки с классом active */
-  color: #ff9800; /* Цвет как при наведении */
-  font-weight: bold; /* Можно добавить жирность */
-  /* Важно: убеждаемся, что активная ссылка не реагирует на hover так же, */
-  /* чтобы не было двойного эффекта или конфликтов (если нужно) */
-  /* pointer-events: none; */ /* Раскомментируйте, если хотите отключить hover для активной */
+.nav-link.active {
+  color: #ff9800;
+  font-weight: bold;
 }
 
 /*header*/
-header{
-	color: #d8d8d8;
-	text-align: center;
-	font-family: 'Open Sans', sans-serif;
+/* --- ИЗМЕНЕНИЯ В HEADER --- */
+header {
+  color: #d8d8d8;
+  text-align: center;
+  font-family: 'Open Sans', sans-serif;
+  padding: 0 20px;
+  /* Добавим боковые отступы */
 }
 
 .main-index {
@@ -97,34 +161,82 @@ header{
 }
 
 .banner {
-  height: 850px;
+  /* height: 850px; */
+  /* Убираем фиксированную высоту */
   width: 100%;
+  /* Оставляем */
+  max-height: 70vh;
+  /* Ограничим высоту, чтобы не занимал весь экран */
+  object-fit: cover;
+  /* Чтобы изображение красиво заполняло область */
 }
-header h1{
-	margin-top: 65px;
-	font-size: 48px;
-	font-weight: 300;
+
+.duck {
+  color: rgb(255, 115, 0);
+  font-size: 2.9rem;
 }
+
+header h1 {
+  margin-top: 3rem;
+  /* Используем rem */
+  /* Было 65px */
+  font-size: 2.5rem;
+  /* Используем rem */
+  /* Было 48px */
+  font-weight: 300;
+}
+
 .h1-main {
   margin-top: 65px;
-	font-size: 60px;
-	font-weight: 300;
+  font-size: 60px;
+  font-weight: 300;
 }
 
-header h1 span{
-	font-weight: bold;
+header h1 span {
+  font-weight: bold;
 }
-header h2{
-	font-size: 36px;
-	margin: 25px 0;
-	font-weight: 300
+
+header h2 {
+  font-size: 1.8rem;
+  /* Используем rem */
+  /* Было 36px */
+  margin: 1.5rem 0;
+  /* Используем rem */
+  /* Было 25px */
+  font-weight: 300;
+  line-height: 1.4;
+  /* Добавим для лучшей читаемости */
 }
-header h2 span{
-	color: #eb615b;
+
+header h2 span {
+  color: #eb615b;
 }
+
+header a {
+  /* Кнопка Регламент */
+  background-color: #ff6760;
+  padding: 0.8rem 1.2rem;
+  /* Используем rem */
+  /* Было 15px 20px */
+  text-transform: uppercase;
+  border: none;
+  border-radius: 10px;
+  margin: 1rem 0 3rem;
+  /* Используем rem */
+  /* Было 10px 0 75px */
+  display: inline-block;
+  color: #fff;
+  text-decoration: none;
+  font-size: 1rem;
+  /* Используем rem */
+  /* Было 16px */
+  font-weight: bold;
+}
+
+/* --- Конец изменений в HEADER --- */
 
 .main-nav li a {
-  display: inline-block; 
+  display: inline-block;
   color: #cccccc;
   text-align: center;
   padding: 14px 16px;
@@ -132,7 +244,7 @@ header h2 span{
   font-size: 12px;
   text-transform: uppercase;
   font-family: sans-serif;
-  vertical-align: middle; /
+  vertical-align: middle;/
 }
 
 .main-nav li a:hover:not(.dropbtn) {
@@ -147,50 +259,50 @@ header h2 span{
 
 
 .dropbtn::after {
-  content: ''; 
+  content: '';
   display: inline-block;
-  margin-left: 6px; 
-  vertical-align: middle; 
+  margin-left: 6px;
+  vertical-align: middle;
   border-style: solid;
-  border-width: 4px 4px 0 4px; 
-  border-color: #cccccc transparent transparent transparent; 
-  transition: border-color 0.2s ease, transform 0.2s ease; 
+  border-width: 4px 4px 0 4px;
+  border-color: #cccccc transparent transparent transparent;
+  transition: border-color 0.2s ease, transform 0.2s ease;
 }
 
 .dropdown:hover .dropbtn::after {
-  border-color: white transparent transparent transparent; 
+  border-color: white transparent transparent transparent;
 }
 
 
 .dropdown-content {
-  opacity: 0; 
-  visibility: hidden; 
-  transform: translateY(-10px); 
-  transition: opacity 0.3s ease, transform 0.3s ease, visibility 0s 0.3s; 
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-10px);
+  transition: opacity 0.3s ease, transform 0.3s ease, visibility 0s 0.3s;
 
   position: absolute;
   background-color: #3a3a3a;
   min-width: 160px;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.3);
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.3);
   z-index: 1;
   right: 0;
   list-style: none;
-  padding: 5px 0; 
+  padding: 5px 0;
   margin: 0;
-  margin-top: 5px; 
-  border-radius: 4px; 
+  margin-top: 5px;
+  border-radius: 4px;
   text-align: left;
 }
 
 .dropdown-content li a {
   color: #cccccc;
-  padding: 10px 16px; 
+  padding: 10px 16px;
   text-decoration: none;
   display: block;
   text-transform: none;
   font-size: 13px;
   white-space: nowrap;
-  transition: background-color 0.2s ease, color 0.2s ease; 
+  transition: background-color 0.2s ease, color 0.2s ease;
 }
 
 .dropdown-content li a:hover {
@@ -199,10 +311,10 @@ header h2 span{
 }
 
 .dropdown:hover .dropdown-content {
-  opacity: 1; 
-  visibility: visible; 
-  transform: translateY(0); 
-  transition: opacity 0.3s ease, transform 0.3s ease, visibility 0s 0s; 
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+  transition: opacity 0.3s ease, transform 0.3s ease, visibility 0s 0s;
 }
 
 .dropdown:hover .dropbtn {
@@ -211,15 +323,15 @@ header h2 span{
 }
 
 header a {
-	background-color: #ff6760;
-	padding: 15px 20px;
-	text-transform: uppercase;
-	border: none;
-	border-radius: 10px;
-	margin: 10px 0 75px;
-	display: inline-block;
-	color: #fff;
-	text-decoration: none;
+  background-color: #ff6760;
+  padding: 15px 20px;
+  text-transform: uppercase;
+  border: none;
+  border-radius: 10px;
+  margin: 10px 0 75px;
+  display: inline-block;
+  color: #fff;
+  text-decoration: none;
   font-size: 16px;
   font-weight: bold;
 }
@@ -233,115 +345,168 @@ header a {
 
 /* Оверлей (затемнение фона) */
 #passwordOverlay {
-  position: fixed; /* Фиксированное положение на весь экран */
+  position: fixed;
+  /* Фиксированное положение на весь экран */
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.65); /* Полупрозрачный черный фон */
-  display: flex; /* Используем flex для центрирования блока ввода */
+  background-color: rgba(0, 0, 0, 0.65);
+  /* Полупрозрачный черный фон */
+  display: flex;
+  /* Используем flex для центрирования блока ввода */
   justify-content: center;
   align-items: center;
-  z-index: 1000; /* Должен быть поверх всего остального контента */
-  transition: opacity 0.3s ease-out; /* Плавное исчезновение */
+  z-index: 1000;
+  /* Должен быть поверх всего остального контента */
+  transition: opacity 0.3s ease-out;
+  /* Плавное исчезновение */
   /* Убедись, что твой основной контент имеет z-index ниже 1000, если ты используешь z-index */
 }
 
 /* Контейнер формы ввода пароля */
 #passwordPrompt {
-  background-color: #ffffff; /* Белый фон блока */
+  background-color: #ffffff;
+  /* Белый фон блока */
   padding: 30px 40px;
   border-radius: 8px;
-  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.25); /* Тень для выделения */
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.25);
+  /* Тень для выделения */
   text-align: center;
-  width: 90%; /* Ширина на мобильных */
-  max-width: 360px; /* Максимальная ширина на больших экранах */
-  box-sizing: border-box; /* Чтобы padding не влиял на общую ширину */
+  width: 90%;
+  /* Ширина на мобильных */
+  max-width: 360px;
+  /* Максимальная ширина на больших экранах */
+  box-sizing: border-box;
+  /* Чтобы padding не влиял на общую ширину */
 }
 
 /* Заголовок внутри блока ввода */
 #passwordPrompt h2 {
   margin-top: 0;
   margin-bottom: 15px;
-  color: #333; /* Цвет заголовка (можешь поменять) */
-  font-size: 1.4em; /* Размер заголовка */
+  color: #333;
+  /* Цвет заголовка (можешь поменять) */
+  font-size: 1.4em;
+  /* Размер заголовка */
   font-weight: 600;
-  font-family: sans-serif; /* Используем базовый шрифт, если твой не подхватится */
+  font-family: sans-serif;
+  /* Используем базовый шрифт, если твой не подхватится */
 }
 
 /* Поясняющий текст внутри блока ввода */
 #passwordPrompt p {
   margin-bottom: 25px;
-  color: #555; /* Цвет текста (можешь поменять) */
+  color: #555;
+  /* Цвет текста (можешь поменять) */
   font-size: 0.95em;
   line-height: 1.4;
-   font-family: sans-serif; /* Используем базовый шрифт */
+  font-family: sans-serif;
+  /* Используем базовый шрифт */
 }
 
 /* Поле ввода пароля */
 #passwordInput {
-  width: 100%; /* На всю ширину блока #passwordPrompt */
+  width: 100%;
+  /* На всю ширину блока #passwordPrompt */
   padding: 12px 15px;
-  margin-bottom: 10px; /* Отступ снизу до сообщения об ошибке */
-  border: 1px solid #ced4da; /* Серая рамка */
+  margin-bottom: 10px;
+  /* Отступ снизу до сообщения об ошибке */
+  border: 1px solid #ced4da;
+  /* Серая рамка */
   border-radius: 5px;
   box-sizing: border-box;
   font-size: 1em;
-  font-family: inherit; /* Наследует шрифт от родителя */
+  font-family: inherit;
+  /* Наследует шрифт от родителя */
 }
+
 /* Стиль при фокусе на поле ввода */
 #passwordInput:focus {
-  border-color: #80bdff; /* Голубая рамка при фокусе */
-  outline: 0; /* Убираем стандартный контур */
-  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25); /* Легкое свечение */
+  border-color: #80bdff;
+  /* Голубая рамка при фокусе */
+  outline: 0;
+  /* Убираем стандартный контур */
+  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+  /* Легкое свечение */
 }
 
 /* Сообщение об ошибке */
 #errorMessage {
-  color: #dc3545; /* Красный цвет для ошибки */
+  color: #dc3545;
+  /* Красный цвет для ошибки */
   font-size: 0.85em;
-  min-height: 1.2em; /* Резервируем место, чтобы форма не прыгала */
-  margin-bottom: 15px; /* Отступ до кнопки */
-  text-align: left; /* Выравнивание текста ошибки по левому краю */
-  display: none; /* Скрыто по умолчанию */
-   font-family: sans-serif; /* Используем базовый шрифт */
+  min-height: 1.2em;
+  /* Резервируем место, чтобы форма не прыгала */
+  margin-bottom: 15px;
+  /* Отступ до кнопки */
+  text-align: left;
+  /* Выравнивание текста ошибки по левому краю */
+  display: none;
+  /* Скрыто по умолчанию */
+  font-family: sans-serif;
+  /* Используем базовый шрифт */
 }
 
 /* Кнопка "Войти" */
 #submitPassword {
-  width: 100%; /* На всю ширину блока #passwordPrompt */
+  width: 100%;
+  /* На всю ширину блока #passwordPrompt */
   padding: 12px 20px;
-  background-color: #007bff; /* Синий цвет кнопки */
-  color: white; /* Белый текст на кнопке */
+  background-color: #007bff;
+  /* Синий цвет кнопки */
+  color: white;
+  /* Белый текст на кнопке */
   border: none;
   border-radius: 5px;
   font-size: 1em;
   font-weight: 500;
   cursor: pointer;
   transition: background-color 0.2s ease;
-  font-family: inherit; /* Наследует шрифт */
+  font-family: inherit;
+  /* Наследует шрифт */
 }
+
 /* Стиль кнопки при наведении */
 #submitPassword:hover {
-  background-color: #0056b3; /* Более темный синий при наведении */
+  background-color: #0056b3;
+  /* Более темный синий при наведении */
 }
 
 /* Стиль для плавного скрытия оверлея (добавляется через JS) */
 #passwordOverlay.hidden {
   opacity: 0;
-  pointer-events: none; /* Чтобы нельзя было кликнуть на невидимый оверлей */
+  pointer-events: none;
+  /* Чтобы нельзя было кликнуть на невидимый оверлей */
 }
 
 /* Анимация тряски при ошибке (добавляется через JS) */
 @keyframes shake {
-0%, 100% { transform: translateX(0); }
-10%, 30%, 50%, 70%, 90% { transform: translateX(-5px); }
-20%, 40%, 60%, 80% { transform: translateX(5px); }
+
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+
+  10%,
+  30%,
+  50%,
+  70%,
+  90% {
+    transform: translateX(-5px);
+  }
+
+  20%,
+  40%,
+  60%,
+  80% {
+    transform: translateX(5px);
+  }
 }
 
 /* Применяем анимацию к блоку (этот класс можно добавить в JS при ошибке) */
 #passwordPrompt.shake-animation {
-   animation: shake 0.5s;
+  animation: shake 0.5s;
 }
 
 
@@ -349,35 +514,36 @@ header a {
 /* Либо через JS как в прошлом примере (protectedContent.style.display = 'none';) */
 /* Либо добавь этот стиль, если у тебя нет JS для этого */
 #protectedContent {
-   display: none;
+  display: none;
 }
 
 /* --- Конец стилей для формы ввода пароля --- */
 
 .rules {
   background-color: #ff6760;
-	padding: 15px 20px;
-	text-transform: uppercase;
-	border: none;
-	border-radius: 10px;
-	margin: 10px 0px 75px;
-	display: block;
-	color: #fff;
-	text-decoration: none;
+  padding: 15px 20px;
+  text-transform: uppercase;
+  border: none;
+  border-radius: 10px;
+  margin: 10px 0px 75px;
+  display: block;
+  color: #fff;
+  text-decoration: none;
   text-align: center;
   font-weight: bold;
   font-size: 20px;
 }
+
 .reg {
   background-color: #ff6760;
-	padding: 15px 20px;
-	text-transform: uppercase;
-	border: none;
-	border-radius: 10px;
-	margin: 10px 0 75px;
-	display: block;
-	color: #fff;
-	text-decoration: none;
+  padding: 15px 20px;
+  text-transform: uppercase;
+  border: none;
+  border-radius: 10px;
+  margin: 10px 0 75px;
+  display: block;
+  color: #fff;
+  text-decoration: none;
   font-size: 20px;
   font-weight: bold;
   text-align: center;
@@ -385,14 +551,14 @@ header a {
 
 .personal {
   background-color: #ff6760;
-	padding: 15px 20px;
-	text-transform: uppercase;
-	border: none;
-	border-radius: 10px;
-	margin: 10px 0px 75px;
-	display: block;
-	color: #fff;
-	text-decoration: none;
+  padding: 15px 20px;
+  text-transform: uppercase;
+  border: none;
+  border-radius: 10px;
+  margin: 10px 0px 75px;
+  display: block;
+  color: #fff;
+  text-decoration: none;
   text-align: center;
   font-weight: bold;
   font-size: 20px;
@@ -400,14 +566,14 @@ header a {
 
 .stadii {
   background-color: #ff6760;
-	padding: 15px 20px;
-	text-transform: uppercase;
-	border: none;
-	border-radius: 10px;
-	margin: 10px 0px 75px;
-	display: block;
-	color: #fff;
-	text-decoration: none;
+  padding: 15px 20px;
+  text-transform: uppercase;
+  border: none;
+  border-radius: 10px;
+  margin: 10px 0px 75px;
+  display: block;
+  color: #fff;
+  text-decoration: none;
   text-align: center;
   font-weight: bold;
   font-size: 20px;
@@ -415,14 +581,14 @@ header a {
 
 .p-rules {
   background-color: #ff6760;
-	padding: 15px 20px;
-	text-transform: uppercase;
-	border: none;
-	border-radius: 10px;
-	margin: 10px 0px 75px;
-	display: block;
-	color: #fff;
-	text-decoration: none;
+  padding: 15px 20px;
+  text-transform: uppercase;
+  border: none;
+  border-radius: 10px;
+  margin: 10px 0px 75px;
+  display: block;
+  color: #fff;
+  text-decoration: none;
   text-align: center;
   font-weight: bold;
   font-size: 20px;
@@ -433,95 +599,307 @@ header a {
   font-weight: bold;
 }
 
+/* --- ИЗМЕНЕНИЯ В FAQ --- */
 .faq-section {
-  max-width: 800px; /* Максимальная ширина блока FAQ */
-  margin: 40px auto; /* Отступы сверху/снизу и авто по бокам для центрирования */
-  padding: 20px;    /* Внутренние отступы */
-  text-align: left; /* Выравнивание текста по левому краю */
-  color: #cccccc; /* Цвет текста (можете поменять на свой) */
+  max-width: 90%;
+  /* Сделаем ширину в % */
+  width: 800px;
+  /* Ограничим максимальную ширину */
+  margin: 3rem auto;
+  /* Отступы rem и центрирование */
+  padding: 20px;
+  text-align: left;
+  color: #cccccc;
 }
 
 .faq-section h2 {
-  text-align: center; /* Заголовок секции по центру */
-  margin-bottom: 80px; /* Отступ снизу от заголовка */
-  color: #ffffff; /* Цвет заголовка (можете поменять) */
-  font-size: 40px;
+  text-align: center;
+  margin-bottom: 3rem;
+  /* Отступ rem */
+  color: #ffffff;
+  font-size: 2rem;
+  /* rem */
+  /* Было 40px */
 }
 
-.faq-list dt { /* Стили для вопроса */
-  font-weight: bold;  /* Жирный шрифт */
-  margin-top: 15px;   /* Отступ сверху перед вопросом */
-  color: #e0e0e0;   /* Цвет текста вопроса */
-  font-size: 1.6em;   /* Немного увеличить размер шрифта */
+.faq-list dt {
+  font-weight: bold;
+  margin-top: 1.5rem;
+  /* rem */
+  /* Было 15px */
+  color: #e0e0e0;
+  font-size: 1.1rem;
+  /* rem */
+  /* Было 1.6em */
 }
 
-.faq-list dd { /* Стили для ответа */
-  margin-left: 0;     /* Убрать стандартный отступ слева для dd */
-  margin-top: 5px;    /* Небольшой отступ сверху перед ответом */
-  padding-left: 20px; /* Добавить небольшой отступ слева для визуального разделения */
-  border-left: 2px solid #555555; /* Декоративная линия слева */
-  line-height: 1.6;   /* Межстрочный интервал для лучшей читаемости */
-  font-size: 1.6em;
+.faq-list dd {
+  margin-left: 0;
+  margin-top: 0.5rem;
+  /* rem */
+  /* Было 5px */
+  padding-left: 20px;
+  border-left: 2px solid #555555;
+  line-height: 1.6;
+  font-size: 1rem;
+  /* rem */
+  /* Было 1.6em */
+  margin-bottom: 1.5rem;
+  /* Добавим отступ снизу ответа */
 }
 
 .faq-list dt:first-of-type {
   margin-top: 0;
 }
-/*footer*/
-footer{
-	color: #d8d8d8;
-	text-align: center;
 
-}
-footer h3{
-	margin: 50px 0 25px;
-	font-size: 40px;
+/* Кнопки внутри FAQ */
+.faq-section a.rules,
+.faq-section a.personal,
+.faq-section a.reg,
+.faq-section a.stadii,
+.faq-section a.p-rules {
+  background-color: #ff6760;
+  padding: 0.7rem 1rem;
+  text-transform: uppercase;
+  border: none;
+  border-radius: 10px;
+  margin: 0.8rem 0 1.5rem;
+  /* Отступы rem */
+  color: #fff;
+  text-decoration: none;
+  text-align: center;
   font-weight: bold;
+  font-size: 0.9rem;
+  /* rem */
 }
 
-footer p{
-	color: #858585;
-	font-size: 16px;
-	padding: 3px 0;
+/* --- Конец изменений в FAQ --- */
 
+/*footer*/
+/* --- ИЗМЕНЕНИЯ В FOOTER --- */
+footer {
+  color: #d8d8d8;
+  text-align: center;
+  padding: 2rem 20px;
+  /* Добавим отступы */
+  margin-top: 2rem;
+  /* Отступ сверху */
+}
+
+footer h3 {
+  /* margin: 50px 0 25px; */
+  /* Убираем margin, зададим в footer padding */
+  font-size: 1.5rem;
+  /* rem */
+  /* Было 40px */
+  font-weight: bold;
+  margin-bottom: 1rem;
+  /* Отступ снизу */
+}
+
+footer p {
+  color: #858585;
+  font-size: 0.9rem;
+  /* rem */
+  /* Было 16px */
+  padding: 3px 0;
+  margin-bottom: 0.5rem;
+  /* Отступ между параграфами */
 }
 
 .bold {
   font-weight: bold;
-  font-size: 20px;
+  font-size: 1rem;
+  /* rem */
+  /* Было 20px */
 }
+
+/* --- Конец изменений в FOOTER --- */
 
 .br {
   color: #ff0000;
   font-size: 2px;
 }
-footer p a{
-	color: #793f3d;
+
+footer p a {
+  color: #793f3d;
 }
-.socialIcons{
-	margin: 15px 0 50px;
+
+.socialIcons {
+  margin: 15px 0 50px;
 
 }
-.socialIcons a{
-	color: #fff;
+
+.socialIcons a {
+  color: #fff;
   text-decoration: none;
 
 }
-.socialIcons .fa-twitter{
-	background-color: #5daed5;
-	padding: 5px;
-	border-radius: 50%;
-}
-.socialIcons .fa-facebook{
-	background-color: #4470cf;
-	padding: 5px 8px;
-	border-radius: 50%;
+
+.socialIcons .fa-twitter {
+  background-color: #5daed5;
+  padding: 5px;
+  border-radius: 50%;
 }
 
-@media screen and (max-width: 640px){
-	.item{
-		width: 50%;
-		margin: 0 auto;
-		display: block;
-	}
+.socialIcons .fa-facebook {
+  background-color: #4470cf;
+  padding: 5px 8px;
+  border-radius: 50%;
 }
+
+/* --- МЕДИА-ЗАПРОСЫ ДЛЯ АДАПТИВНОСТИ --- */
+
+/* Планшеты и маленькие десктопы (примерно до 992px) */
+@media (max-width: 992px) {
+  nav .logo {
+    font-size: 1.8rem;
+    /* Уменьшаем лого */
+  }
+
+  .duck-logo {
+    font-size: 2rem;
+  }
+
+  nav ul {
+    gap: 15px;
+    /* Уменьшаем отступ между пунктами */
+    font-size: 0.9rem;
+  }
+
+  header h1 {
+    font-size: 2.2rem;
+  }
+
+  header h2 {
+    font-size: 1.6rem;
+  }
+
+  .faq-section h2 {
+    font-size: 1.8rem;
+  }
+
+  .faq-list dt,
+  .faq-list dd {
+    font-size: 1rem;
+  }
+}
+
+/* Мобильные телефоны (примерно до 768px) */
+@media (max-width: 768px) {
+  nav {
+    /* Здесь нужно будет реализовать логику гамбургер-меню */
+    /* Например, скрыть ul и показать кнопку-гамбургер */
+    /* Для примера просто уменьшим отступы */
+    padding: 10px 15px;
+    justify-content: center;
+    /* Можно центрировать на моб */
+  }
+
+  nav ul {
+    /* По умолчанию скрываем для гамбургера */
+    /* display: none; */
+    /* Если не делаем гамбургер, просто центрируем и разрешаем перенос */
+    justify-content: center;
+    gap: 10px;
+    margin-top: 10px;
+    /* Добавляем отступ, если лого сверху */
+  }
+
+  nav .logo {
+    width: 100%;
+    /* Лого на всю ширину, меню под ним */
+    text-align: center;
+    margin-bottom: 10px;
+  }
+
+  header h1 {
+    font-size: 1.8rem;
+    margin-top: 2rem;
+  }
+
+  header h2 {
+    font-size: 1.3rem;
+    margin: 1rem 0;
+  }
+
+  header a {
+    /* Кнопка */
+    padding: 0.7rem 1rem;
+    font-size: 0.9rem;
+    margin-bottom: 2rem;
+  }
+
+  .faq-section {
+    max-width: 95%;
+    /* Почти на всю ширину */
+    padding: 15px;
+    margin: 2rem auto;
+  }
+
+  .faq-section h2 {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+  }
+
+  .faq-list dt {
+    font-size: 1rem;
+  }
+
+  .faq-list dd {
+    font-size: 0.9rem;
+  }
+
+  .faq-section a.rules,
+  /* Уменьшаем кнопки FAQ */
+  .faq-section a.personal,
+  .faq-section a.reg,
+  .faq-section a.stadii,
+  .faq-section a.p-rules {
+    font-size: 0.8rem;
+    padding: 0.6rem 0.8rem;
+  }
+
+  footer h3 {
+    font-size: 1.3rem;
+  }
+
+  footer p {
+    font-size: 0.8rem;
+  }
+
+  .bold {
+    font-size: 0.9rem;
+  }
+}
+
+/* Очень маленькие экраны (до 480px) */
+@media (max-width: 480px) {
+  html {
+    font-size: 90%;
+    /* Еще немного уменьшаем базу шрифтов */
+  }
+
+  nav ul {
+    gap: 5px;
+    /* Еще меньше отступы в меню */
+  }
+
+  header h1 {
+    font-size: 1.6rem;
+  }
+
+  header h2 {
+    font-size: 1.1rem;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .item {
+    width: 50%;
+    margin: 0 auto;
+    display: block;
+  }
+}
+
+/* --- Конец МЕДИА-ЗАПРОСОВ --- */
