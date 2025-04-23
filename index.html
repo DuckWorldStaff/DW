@@ -68,6 +68,19 @@
             <h2>Для полного ознакомления нажмите на кнопку ниже</h2>
             <a href="https://drive.google.com/file/d/18ECSZvlQudHRG6nyhBLbqb5kcnPhb0lm/view">Регламент</a>
         </header>
+
+        <section class="dw-server">
+            <span>Не забывайте заходить на наш дс сервер для стаффа</span>
+            <p>Для получения приглашения, напишите нашему куратору в дискорд либо телеграмм, ссылки будут внизу</p>
+        </section>
+
+        <section class="dw-silka">
+            <a class="dw-ds"
+                    href="https://discord.com/users/828582521494831104" target="_blank">Дискорд</a>
+                    <a class="dw-tg"
+                    href="http://t.me/midweek24" target="_blank">Телеграмм</a>
+        </section>
+
         <section class="faq-section">
             <h2>Частые вопросы стажеров</h2>
             <dl class="faq-list">
@@ -98,7 +111,8 @@
                 <dd>Вот правильный пример мута:</dd>
                 <dd class="decor">/tempmute FINDMY 30m 2.1 Спам (Стадия 1 - 30м)</dd>
                 <dd>Более подробно вы можете ознакомится в регламенте</dd>
-                <a class="reg" href="https://drive.google.com/file/d/18ECSZvlQudHRG6nyhBLbqb5kcnPhb0lm/view">Регламент</a>
+                <a class="reg"
+                    href="https://drive.google.com/file/d/18ECSZvlQudHRG6nyhBLbqb5kcnPhb0lm/view">Регламент</a>
 
                 <dt><span class="dec">Вопрос 5: Что если я не понимаю обьяснение какого либо правила?</span></dt>
                 <dd>Если вы не понимаете какое то правило, вы можете перейти по ссылке ниже и прочитать более поробное
@@ -109,6 +123,24 @@
                     к правилам</a>
 
                 <dt><span class="dec">Вопрос 6: Что такое стадии, и как их писать?</span></dt>
+                <dd>Стадия, это система тяжести наказания. Узнать что это такое более подробно можно посетив руководство
+                    системы
+                    стадий либо нажав на кнопку ниже</dd>
+                <a class="stadii"
+                    href="https://drive.google.com/file/d/1EFqnq4_lCbbVvc_EX0t5_Bc7YL9ylH0ZF1XtGYJZFpo/edit?pli=1&tab=t.0">Руководство
+                    системы стадий</a>
+
+                <dt><span class="dec">Вопрос 7: Как поступить в ситуации, если игрок нарушил несколько правил в
+                        сообщении?</span></dt>
+                <dd>Пример: Игрок написал *ХАХАХАХАХА*, в этом случае он нарушил 2 правила в одном сообщении. Вы должны
+                    выдать мут по 2ум правилам, тоесть вам нужно написать 30 минут + 15 минут и во времени наказания
+                    указать 45m. </dd>
+                <dd>Если же вы будучи стажёром и находясь на сервере заметили нарушение нескольких правил в одном
+                    сообщении и нарушения были такими: 2.1 и 2.7. Вы не можете выдать наказание за 2.7 так как время
+                    нарушения больше 4 часов, в этом случае вам не нужно выдавать наказание только за 2.1, вам следует
+                    написать согласование на выдачу наказания.</dd>
+
+                    <dt><span class="dec">Вопрос 8: Что такое стадии, и как их писать?</span></dt>
                 <dd>Стадия, это система тяжести наказания. Узнать что это такое более подробно можно посетив руководство
                     системы
                     стадий либо нажав на кнопку ниже</dd>
@@ -131,25 +163,25 @@
         </footer>
     </div>
     </div>
-<script>
-        const correctPassword = atob("a21tYTE1MDQ="); const passwordOverlay = document.getElementById('passwordOverlay');const passwordInput = document.getElementById('passwordInput');const submitButton = document.getElementById('submitPassword');const protectedContent = document.getElementById('protectedContent');const errorMessage = document.getElementById('errorMessage');
+    <script>
+        const correctPassword = atob(""); const passwordOverlay = document.getElementById('passwordOverlay'); const passwordInput = document.getElementById('passwordInput'); const submitButton = document.getElementById('submitPassword'); const protectedContent = document.getElementById('protectedContent'); const errorMessage = document.getElementById('errorMessage');
 
-const accessFlagKey = 'userAccessGranted_kudrin_page'; 
+        const accessFlagKey = 'userAccessGranted_kudrin_page';
 
-function checkAccessOnLoad() {
-    const accessGranted = localStorage.getItem(accessFlagKey);
+        function checkAccessOnLoad() {
+            const accessGranted = localStorage.getItem(accessFlagKey);
 
-    if (accessGranted === 'true') {
-        showContent();
-    } else {
-        showPasswordOverlay();
-    }
-}
-function showContent() {
-    if (passwordOverlay) passwordOverlay.style.display = 'none';
-    if (protectedContent) protectedContent.style.display = 'block';
-    if (errorMessage) errorMessage.textContent = '';
-}
+            if (accessGranted === 'true') {
+                showContent();
+            } else {
+                showPasswordOverlay();
+            }
+        }
+        function showContent() {
+            if (passwordOverlay) passwordOverlay.style.display = 'none';
+            if (protectedContent) protectedContent.style.display = 'block';
+            if (errorMessage) errorMessage.textContent = '';
+        }
 
         function checkPassword() {
             const enteredPassword = passwordInput.value;
@@ -162,8 +194,8 @@ function showContent() {
             } else {
                 errorMessage.textContent = 'Пароль не верный! Если ваш пароль не работает, сообщите об этом вашему наставнику.';
                 errorMessage.style.display = 'block';
-                passwordInput.focus(); 
-                passwordInput.select(); 
+                passwordInput.focus();
+                passwordInput.select();
                 const promptBox = document.getElementById('passwordPrompt');
                 promptBox.style.animation = 'shake 0.5s';
                 setTimeout(() => { promptBox.style.animation = '' }, 500);
@@ -174,7 +206,7 @@ function showContent() {
         passwordInput.addEventListener('keypress', function (event) {
             if (event.key === "Enter" || event.keyCode === 13) {
                 event.preventDefault();
-                checkPassword(); 
+                checkPassword();
             }
         });
         passwordInput.focus();
@@ -190,7 +222,7 @@ function showContent() {
         document.head.appendChild(styleSheet);
 
 
-     </script>
+    </script>
 </body>
 
 </html>
